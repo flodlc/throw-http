@@ -1,25 +1,25 @@
-export class HttpError<
+export class HttpThrow<
   Code extends number = number,
   Data = unknown
 > extends Error {
-  static isHttp = (e: Error): e is HttpError => {
-    return e instanceof HttpError;
+  static isHttpThrow = (e: Error): e is HttpThrow => {
+    return e instanceof HttpThrow;
   };
 
   static Unauthorized = <Data>(message?: string, data?: Data) =>
-    new HttpError({ name: "Unauthorized", code: 401, message, data });
+    new HttpThrow({ name: 'Unauthorized', code: 401, message, data });
 
   static Forbidden = <Data>(message?: string, data?: Data) =>
-    new HttpError({ name: "Forbidden", code: 403, message, data });
+    new HttpThrow({ name: 'Forbidden', code: 403, message, data });
 
   static NotFound = <Data>(message?: string, data?: Data) =>
-    new HttpError({ name: "NotFound", code: 404, message, data });
+    new HttpThrow({ name: 'NotFound', code: 404, message, data });
 
   static BadRequest = <Data>(message?: string, data?: Data) =>
-    new HttpError({ name: "BadRequest", code: 400, message, data });
+    new HttpThrow({ name: 'BadRequest', code: 400, message, data });
 
   static TooManyRequests = <Data>(message?: string, data?: Data) =>
-    new HttpError({ name: "TooManyRequests", code: 429, message, data });
+    new HttpThrow({ name: 'TooManyRequests', code: 429, message, data });
 
   code?: Code;
   data?: Data;
@@ -36,7 +36,7 @@ export class HttpError<
     data?: Data;
   }) {
     super(message);
-    this.name = name ?? "HttpError";
+    this.name = name ?? 'HttpError';
     this.code = code;
     this.data = data;
   }
