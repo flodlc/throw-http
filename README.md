@@ -9,9 +9,9 @@ Throw-http is an Error utility for handling http errors in a delightful way.
 To get started, install http-throw using npm or yarn:
 
 ```sh
-npm install http-throw
+npm install throw-http
 # or
-yarn add http-throw
+yarn add throw-http
 ```
 
 ## Usage
@@ -19,7 +19,7 @@ yarn add http-throw
 Throwing an HttpThrow error
 
 ```typescript
-import { HttpThrow } from 'http-throw';
+import { HttpThrow } from 'throw-http';
 
 throw new HttpThrow.NotFound('User not found');
 ```
@@ -27,7 +27,7 @@ throw new HttpThrow.NotFound('User not found');
 Throwing a custom HttpThrow error
 
 ```typescript
-import { HttpThrow } from 'http-throw';
+import { HttpThrow } from 'throw-http';
 
 throw new HttpThrow({ code: 500, name: 'Badaboom' });
 ```
@@ -35,7 +35,7 @@ throw new HttpThrow({ code: 500, name: 'Badaboom' });
 Typeguard for HttpThrow
 
 ```typescript
-import { HttpThrow } from 'http-throw';
+import { HttpThrow } from 'throw-http';
 
 try {
   // some code
