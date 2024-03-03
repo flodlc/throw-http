@@ -16,31 +16,31 @@ yarn add throw-http
 
 ## Usage
 
-Throwing an HttpThrow error
+Throwing an ThrowHttp error
 
 ```typescript
-import { HttpThrow } from 'throw-http';
+import { ThrowHttp } from 'throw-http';
 
-throw new HttpThrow.NotFound('User not found');
+throw new ThrowHttp.NotFound('User not found');
 ```
 
-Throwing a custom HttpThrow error
+Throwing a custom ThrowHttp error
 
 ```typescript
-import { HttpThrow } from 'throw-http';
+import { ThrowHttp } from 'throw-http';
 
-throw new HttpThrow({ code: 500, name: 'Badaboom' });
+throw new ThrowHttp({ code: 500, name: 'Badaboom' });
 ```
 
-Typeguard for HttpThrow
+Typeguard for ThrowHttp
 
 ```typescript
-import { HttpThrow } from 'throw-http';
+import { ThrowHttp } from 'throw-http';
 
 try {
   // some code
 } catch (error) {
-  if (HttpThrow.isHttpThrow(error)) {
+  if (ThrowHttp.isThrowHttp(error)) {
     // handle http error
   }
 }
