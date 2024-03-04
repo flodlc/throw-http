@@ -3,6 +3,7 @@
 ## Introduction
 
 Throw-http is an Error utility for handling http errors in a delightful way.
+I created it because existing libraries are not type-safe, not correctly exported or don't allow to pass additional data in the error.
 
 ## Installation
 
