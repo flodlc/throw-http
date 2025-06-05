@@ -8,6 +8,11 @@ export class ThrowHttp<
     return e instanceof ThrowHttp;
   };
 
+  static BadRequest = <Data extends DefaultData>(
+    message?: string,
+    data?: Data
+  ) => new ThrowHttp({ name: 'Bad Request', code: 400, message, data });
+
   static Unauthorized = <Data extends DefaultData>(
     message?: string,
     data?: Data
@@ -166,6 +171,11 @@ export class ThrowHttp<
       message,
       data,
     });
+
+  static ServerError = <Data extends DefaultData>(
+    message?: string,
+    data?: Data
+  ) => new ThrowHttp({ name: 'Server Error', code: 500, message, data });
 
   code?: Code;
   data?: Data;
